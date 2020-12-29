@@ -14,6 +14,4 @@ def is_poisonous(request):
 
     pred_res = predict(X_encoded)
 
-    print(pred_res)
-
-    return JsonResponse("request catched", safe=False)
+    return JsonResponse({"data": pred_res})
