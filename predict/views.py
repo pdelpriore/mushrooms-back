@@ -6,12 +6,19 @@ from predict.methods.prediction import predict
 
 def is_poisonous(request):
     body_unicode = request.body.decode('utf-8')
-    body = json.loads(body_unicode)
 
-    params_array = [v for k, v in body.items()]
+    if len(body_unicode) > 0:
+        body = json.loads(body_unicode)
 
-    X_encoded = encode_features(params_array)
+        if len(body.keys()) < 12:
+            return JsonResponse({"error": "bad request"})
+        else:
+            params_array = [v for k, v in body.items()]
 
-    pred_res = predict(X_encoded)
+            X_encoded = encode_features(params_array)
 
-    return JsonResponse({"data": pred_res})
+            pred_res = predict(X_encoded)
+
+            return JsonResponse({"data": pred_res})
+    else:
+        return JsonResponse({"error": "bad request"})
