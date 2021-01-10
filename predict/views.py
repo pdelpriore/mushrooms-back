@@ -7,7 +7,7 @@ from predict.methods.prediction import predict
 def is_poisonous(request):
     body_unicode = request.body.decode('utf-8')
 
-    if len(body_unicode) > 0:
+    if (len(body_unicode) > 0) & (body_unicode.startswith("{")) & (body_unicode.endswith("}")):
         body = json.loads(body_unicode)
 
         if len(body.keys()) < 12:
