@@ -19,6 +19,6 @@ def is_poisonous(request):
 
             pred_res = predict(X_encoded)
 
-            return JsonResponse({"data": pred_res})
+            return JsonResponse({"result": pred_res})
     else:
         return JsonResponse({"error": "bad request"})
