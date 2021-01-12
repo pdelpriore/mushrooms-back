@@ -1,6 +1,6 @@
 def decode_result(res):
     target = {
-        0: "jadalny",
-        1: "trujący"
+        0: "edible",
+        1: "poisonous"
     }
     return target[res]
