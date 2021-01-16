@@ -2,6 +2,3 @@
 __pycache__
 db.sqlite3
 venv
-Procfile
-requirements.txt
-runtime.txt

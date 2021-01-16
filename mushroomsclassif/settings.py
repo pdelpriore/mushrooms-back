@@ -27,6 +27,8 @@ SECRET_KEY = 'b4c+)ewi#yos&l%n=2jmemz3(mznub*4l^lrh)7lgd_fbsdh^&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+SECURE_SSL_REDIRECT = True
+
 ALLOWED_HOSTS = [
     'edibleorpoisonous.herokuapp.com'
 ]
